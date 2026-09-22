@@ -1,0 +1,226 @@
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  color: #f4f8f8;
+  background: #050d14;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #050d14;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+button {
+  border: 0;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #74f1da;
+  outline-offset: 4px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+svg {
+  flex-shrink: 0;
+}
+
+.whale-app {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.global-header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 48px, 1380px);
+  height: 76px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(159, 207, 215, 0.14);
+}
+.global-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #f2fbfa;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+.global-brand strong {
+  color: #71efdb;
+}
+.global-brand small {
+  display: block;
+  margin-top: 5px;
+  color: #78929c;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+.global-brand__mark {
+  display: grid;
+  width: 44px;
+  height: 36px;
+  place-items: center;
+  color: #71efdb;
+}
+.global-brand__mark svg {
+  width: 44px;
+  height: 30px;
+}
+.global-header__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #95adb4;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.feed-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #91a7ae;
+  box-shadow: 0 0 0 4px rgba(145, 167, 174, 0.08);
+}
+.feed-dot--live {
+  background: #71efdb;
+  box-shadow:
+    0 0 0 4px rgba(113, 239, 219, 0.1),
+    0 0 18px rgba(113, 239, 219, 0.7);
+}
+.feed-dot--replay {
+  background: #9a9bff;
+  box-shadow:
+    0 0 0 4px rgba(154, 155, 255, 0.1),
+    0 0 18px rgba(154, 155, 255, 0.55);
+}
+.feed-dot--training {
+  background: #f0b761;
+  box-shadow: 0 0 0 4px rgba(240, 183, 97, 0.08);
+}
+.feed-dot--unavailable {
+  background: #ff727d;
+  box-shadow: 0 0 0 4px rgba(255, 114, 125, 0.08);
+}
+.app-loading,
+.app-error {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  min-height: calc(100vh - 76px);
+  padding: 40px 24px;
+  color: #94aab2;
+  text-align: center;
+}
+.app-loading__ring {
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(113, 239, 219, 0.2);
+  border-top-color: #71efdb;
+  border-radius: 50%;
+  animation: spin 900ms linear infinite;
+}
+.app-error {
+  align-content: center;
+}
+.app-error__code {
+  color: #ff929a;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+.app-error h1 {
+  color: #f4f8f8;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -0.04em;
+}
+.app-error button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid #71efdb;
+  border-radius: 10px;
+  background: rgba(113, 239, 219, 0.1);
+  color: #71efdb;
+  font-weight: 800;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 620px) {
+  .global-header {
+    width: min(100% - 28px, 1380px);
+    height: 68px;
+  }
+  .global-brand {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+  .global-brand small {
+    font-size: 7px;
+    letter-spacing: 0.14em;
+  }
+  .global-brand__mark,
+  .global-brand__mark svg {
+    width: 38px;
+  }
+  .global-header__status {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

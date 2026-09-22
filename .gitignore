@@ -1,0 +1,12 @@
+node_modules/
+.runtime/
+dist/
+data/
+.tmp/
+.env
+.env.*
+!.env.example
+*.backup-*
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

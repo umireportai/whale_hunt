@@ -1,0 +1,10 @@
+node_modules
+.runtime
+.git
+dist
+data
+.env
+.env.*
+*.backup-*
+**/*.backup-*
+.tmp
